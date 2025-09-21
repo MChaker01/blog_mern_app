@@ -1,0 +1,8 @@
+# Ignore .git directories of sub-modules/sub-projects
+blog_backend/.git/
+blog_frontend/.git/
+
+# General
+.DS_Store
+.idea/
+.vscode/
