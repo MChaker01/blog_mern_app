@@ -1,0 +1,503 @@
+/* Wrapper */
+.home-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff6b6b, #ff922b);
+  font-family: "Poppins", sans-serif;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Decorative background circles */
+.home-wrapper::before,
+.home-wrapper::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+}
+
+.home-wrapper::before {
+  width: 300px;
+  height: 300px;
+  top: -80px;
+  left: -80px;
+}
+
+.home-wrapper::after {
+  width: 200px;
+  height: 200px;
+  bottom: -60px;
+  right: -60px;
+}
+
+/* Content */
+.home-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+/* Split title animation */
+.home-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.home-title span {
+  display: block;
+  transform: translateY(100%);
+  animation: slideUp 0.8s ease forwards;
+}
+
+.home-title span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Subtitle */
+.home-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Buttons */
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.home-btn {
+  padding: 0.9rem 2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.posts-btn {
+  background: white;
+  color: #ff6b6b;
+}
+
+.posts-btn:hover {
+  background: #ffecec;
+}
+
+.add-btn {
+  background: #1a1a1a;
+  color: white;
+}
+
+.add-btn:hover {
+  background: #333;
+}
+
+/* Layout */
+.postform-wrapper {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Left panel */
+.postform-left {
+  flex: 1;
+  background: linear-gradient(135deg, #ff6b6b, #ff922b);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.postform-left::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+}
+
+.brand-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.brand-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+}
+
+/* Right panel (form area) */
+.postform-right {
+  flex: 2;
+  background: #fdfdfd;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+  position: relative;
+}
+
+.form-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: #ff6b6b;
+  border-radius: 2px;
+}
+
+/* Floating label form groups */
+.form-group {
+  position: relative;
+  margin-bottom: 1.8rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem 0.8rem;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: transparent;
+  font-size: 1rem;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.form-group textarea {
+  resize: none;
+}
+
+.form-group label {
+  position: absolute;
+  left: 0.8rem;
+  top: 0.9rem;
+  font-size: 1rem;
+  color: #999;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* Label animation on focus */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-bottom-color: #ff6b6b;
+  outline: none;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -0.7rem;
+  left: 0.5rem;
+  font-size: 0.8rem;
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+/* Button */
+.creative-button {
+  background: #ff6b6b;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: none; /* Removed heavy shadow */
+}
+
+.creative-button:hover {
+  background: #e85c5c; /* Smooth, subtle hover */
+}
+
+.creative-button:active {
+  transform: scale(0.97); /* Minimal tactile press effect */
+}
+
+/* List des Pubs */
+
+.posts-wrapper {
+  width: 100%;
+  padding: 2rem 1 rem;
+  background: #fdfdfd;
+  font-family: "Poppins", sans-serif;
+}
+
+.posts-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.posts-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: #ff6b6b;
+  border-radius: 2px;
+}
+
+/* Liste = pleine largeur */
+.posts-list {
+  width: 100%;
+}
+
+/* Carte */
+.post-item {
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 1.5rem 1rem;
+  transition: background 0.2s ease;
+  box-sizing: border-box;
+}
+
+.post-item:hover {
+  background: #fff7f7;
+}
+
+/* Header (titre + meta + delete) */
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Bouton poubelle */
+.delete-icon {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #ff6b6b;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.delete-icon:hover {
+  color: #e63946;
+  transform: scale(1.2);
+}
+
+/* Meta */
+.post-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.3rem;
+}
+
+.post-author {
+  font-weight: 500;
+  color: #555;
+}
+
+.post-date {
+  font-style: italic;
+  color: #999;
+}
+
+/* Titre */
+.post-heading {
+  font-size: 1.3rem;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* Contenu */
+.post-body {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
+/* Bouton lire plus */
+.post-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.post-button {
+  background: #ff6b6b;
+  color: white;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.post-button:hover {
+  background: #e85c5c;
+}
+
+.edit-button,
+.delete-button {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.edit-button:hover {
+  color: #ff922b; /* orange (édition) */
+  transform: scale(1.1);
+}
+
+.delete-button:hover {
+  color: #ff6b6b; /* rouge (suppression) */
+  transform: scale(1.1);
+}
+
+.notfound-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff6b6b, #ff922b);
+  font-family: "Poppins", sans-serif;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.notfound-content {
+  max-width: 600px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.notfound-title {
+  font-size: 6rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 5px;
+  animation: splitText 1.2s ease forwards;
+}
+
+.notfound-subtitle {
+  font-size: 1.3rem;
+  margin: 1rem 0 2rem;
+  opacity: 0.9;
+}
+
+.notfound-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.notfound-button {
+  background: white;
+  color: #ff6b6b;
+  font-weight: 600;
+  padding: 0.9rem 1.8rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.notfound-button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.notfound-button.secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.notfound-button.secondary:hover {
+  background: white;
+  color: #ff6b6b;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes splitText {
+  from {
+    letter-spacing: -20px;
+    opacity: 0;
+  }
+  to {
+    letter-spacing: 5px;
+    opacity: 1;
+  }
+}
