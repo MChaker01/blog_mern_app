@@ -123,3 +123,16 @@ Une fois les deux serveurs (backend et frontend) en cours d'exécution, ouvrez v
 
 http://localhost:5173
 
+## Captures d'Écran
+
+### Page d'Accueil
+![Page d'Accueil](screenshots/home-page.png)
+
+### Liste des Publications
+![Liste des Publications](screenshots/posts-list.png)
+
+### Formulaire de Création
+![Formulaire de Création de Publication](screenshots/create-post-form.png)
+
+### Formulaire d'Édition
+![Formulaire d'Édition de Publication](screenshots/edit-post-form.png)
